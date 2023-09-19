@@ -1,0 +1,21 @@
+/* Inner container styles */
+.inner {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Task styles */
+.task {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.bonus-task {
+  margin-top: 20px;
+  font-weight: bold;
+}

@@ -1,0 +1,63 @@
+<div class="inner">
+  <h1>Welcome!</h1>
+  <p>Welcome to the Development test.</p>
+  <p>This server is prepared with a simple REST based forum service running on Nginx, PHP and MySQL.<br/> You should have received an SSH-key that can be used to login to the server as "ubuntu"-user and grant you root access via sudo. You are entitled to solve the tasks listed below any way you see fit. You can modify nginx, make adjustments to the database scheme, change the code structure, install other packages/services, etc. Whatever you feel is suitable.</p>
+  <p>
+    <h3>Some things to get you started</h3>
+    <ul>
+      <li>The restserver is listening on port 8000 and the code is read from /var/www/restserver. You can, right now, test the REST-API by running this command after logging in to the server: <i>curl http://XXX.X.X.X:XXXX/forum</i></li>
+      <li>The restserver code has a specific layout. The public/index.php file handles the incoming requests. A controller is instantiated and validates/routes the request onto its TableGateway. There are three controllers/gateways defined: "forum", "post" and "user".</li>
+      <li>This frontend is available at /var/www/frontend.</li>
+      <li>MySQL listens on port 3306, holds the simple_forum database scheme and has some data pre-populated. Feel free to add more data.</li>
+      <li>This server has Vim and Emacs editor pre-installed but you can use whatever editor you see fit and you can of course do the programming on your own computer and mount or upload the code if you prefer that.</li>
+      <li>The server has a simple iptables firewall via UFW that allows incoming traffic on port 22 and 80. If you need to make changes to this, for instance if you want to be able to access the REST-API directly via your laptop you are allowed to do so. Just please keep security in mind.</li>
+      <li>When you solve the tasks, be sure to keep a good code structure and security. Keep in mind that you are free to improve or completely rewrite the current structure if you think it can be improved.</li>
+    </ul>
+  </p>
+  <div style="margin-top: 40px">
+    <h3>Ok, enough rambling. Let's take a look at the tasks to solve!</h3>
+  </div>
+  <p>
+  The restserver comes with a bunch of existing methods to get and modify data. It follows a pretty standard rest-layout where you use GET, PUT, POST and DELETE requests to get, update, create new and delete data. There are currently three table types available "forum", "post" and "user". A <b>forum</b> contains <b>posts</b> written by a <b>user</b>. The REST-API however lacks a bunch of features and your task is to fix as many of them as you can. You might not be able to solve them all and that is OK. Just do your best and if you can't solve a task, move on to the next one instead.
+  </p>
+  <p>
+  Should you run into any server issues that you can't solve or get stuck on something please reach out to us and we can set you up with a new environment or help you resolve the current one.
+When you are done with the tasks, reach out to us and we will take a look. Best of luck!
+  </p>
+  <b>Your tasks are the following:</b><br/>
+  <div class="inner">
+    <div class="task">
+      <b>#1</b><br/>
+      The REST-API is missing functionality to create a new post. Your task is to add support for this.
+    </div>
+    <div class="task">
+      <b>#2</b><br/>
+      The REST-API is missing functionality for <b>creation, update, deletion</b> of a user, please add this. However, here is the kicker: These commands should ONLY be allowed if the request is made by an admin user. (db: simple_forum.user.admin = 1). Which means, you have to have some way of verifying that the request originates from an admin user. I.e. the request needs to include credential validation in some form. The credentials should NOT be sent as part of the regular payload data but via headers. You can choose to create a token with the credentials in a separate call and include the token, or you are allowed to have the credentials sent as headers in the call itself.<br />
+  There is an existing user marked as admin in the database. You can find the credentials for this user in /var/www/restserver/admin-user-credentials.json.
+    </div>
+    <div class="task">
+      <b>#3</b><br />
+      Write a simple frontend that takes use of the REST-API to:
+      <ul>
+        <li>List forums</li>
+        <li>When you click on a forum: list posts inside that forum</li>
+      </ul>
+      This does not have to be pretty, we just want the functionality.
+    </div>
+    <div style="margin-top: 20px;">
+      <b>Bonus tasks:</b> (If you have the time and want some more fun)
+    </div>
+    <div class="task">
+      <b>#4</b><br />
+      Improve security. Do you see anything inside the restserver code that can be changed/improved to improve security? If so, feel free to implement it.
+    </div>
+    <div class="task">
+      <b>#5</b><br />
+      Code structure. Nobody likes code duplication. There are some pretty obvious ones that we could get rid of in the code. Feel free to do so.
+    </div>
+    <div class="task">
+      <b>#6</b><br />
+      Database layout. See any changes that can be made to the current database scheme to improve performance or decrease the risk of stray data? Feel free to make database scheme changes as you see fit.
+    </div>
+  </div>
+</div>

@@ -1,0 +1,131 @@
+/* Forum styles */
+.forum {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.forum:hover {
+  background-color: #f2f2f2;
+}
+
+/* Forum section styles */
+.forum-section {
+  text-align: center;
+}
+
+.forum-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff5d12;
+  margin-bottom: 20px;
+}
+
+.forum-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.forum-button {
+  width: 300px;
+  margin: 10px;
+  border: 2px solid #ff5d12;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff5d12;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.forum-button:hover {
+  background-color: #ff5d12;
+  color: #fff;
+}
+
+.forum-posts-header {
+  margin-bottom: 10px;
+}
+
+.forum-name {
+  font-size: 24px;
+  margin-left: 10px;
+  color: #ff5d12;
+}
+.forum-name-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Back button style */
+.back-button {
+  background-color: #ddd;
+  color: #1a1a1b;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.back-button::before {
+  content: "\2190"; /* Unicode for leftwards arrow */
+  font-size: 20px;
+  margin-right: 5px;
+  color: #666;
+}
+
+.back-button:hover {
+  background-color: #ccc;
+}
+
+/* Post style */
+.post {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.post-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-message {
+  white-space: pre;
+  flex: 1;
+  margin: 10px 0;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.post-info {
+  flex: 0 0 100px;
+  color: #888;
+  font-size: 12px;
+  text-align: center;
+}
+
+.post-number {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.post-author {
+  font-weight: bold;
+}
+
+.post-time {
+  color: #aaa;
+}
